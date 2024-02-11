@@ -13,11 +13,11 @@ public class FechaNac {
 
     public FechaNac() {}
 
-    public void setDia(String dia) {
+    public void setDia(int dia) {
         this.dia = dia;
     }
 
-    public String getDia() {
+    public int getDia() {
         return dia;
     }
 
@@ -29,11 +29,11 @@ public class FechaNac {
         return mes;
     }
 
-    public void setAnio(String anio) {
+    public void setAnio(int anio) {
         this.anio = anio;
     }
 
-    public String getAnio() {
+    public int getAnio() {
         return anio;
     }
 }
