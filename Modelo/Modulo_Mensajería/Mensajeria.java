@@ -1,38 +1,46 @@
 package Modelo.Modulo_Mensajería;
 
 public class Mensajeria {
-    public String chat; 
+    // Atributos
+    private Mensajes mensaje;
+    private String chats; 
 
-    public Mensajeria(String chat){
-        this.chat = chat;
+    // Constructores
+    public Mensajeria(Mensajes mensaje, String chats) {
+        this.mensaje = mensaje;
+        this.chats = chats;
     }
 
     public Mensajeria() {}
 
-    public void setChat(String chat) { 
-        this.chat = chat;
+    // Setters y getters
+    public void setMensaje(Mensajes mensaje) {
+        this.mensaje = mensaje;
     }
 
-    public String getChat(){
-        return chat;
+    public Mensajes getMensajes() {
+        return mensaje;
     }
 
-    // Funciones
-    public void buscarChatSeleccionado(String chatBuscado) {
-        // Comparamos el chat buscado con el atributo chat de esta clase
-        if (this.chat.equals(chatBuscado)) {
-            // Si son iguales, significa que hemos encontrado el chat
-            System.out.println("Chat encontrado: " + this.chat);
-        } else {
-            // Si no son iguales, significa que no hemos encontrado el chat
-            System.out.println("Chat no encontrado");
-        }
+    public void setChats(String chats) {
+        this.chats = chats;
     }
 
-    // Este método notificará de un nuevo mensaje al usuario
-    public void recibirNuevoMensaje(Mensajes nuevoMensaje) {
-        // Imprimimos el contenido del nuevo mensaje
-        System.out.println("Nuevo mensaje recibido: " + nuevoMensaje.getContenidoMensaje());
+    public String getChats() {
+        return chats;
+    }
+
+    // Metodos 
+    public void buscaChatSeleccionado() {
+
+    }
+
+    public void buscaChatAEliminar() {
+
+    }
+
+    public void recibeChatDeNuevoMensaje() {
+
     }
 
 }

@@ -1,45 +1,45 @@
 package Modelo.Modulo_Mensajería;
 
 public class Mensajes {
-    private String contenidoMensaje;
-    private int hora;
-    private String userUsuario;
-
-    public Mensajes(String contenidoMensaje, int hora, String userUsuario) {
-        this.contenidoMensaje = contenidoMensaje;
-        this.hora = hora;
-        this.userUsuario = userUsuario;
+    // Atributos
+    private String datosMensaje;
+    private String mensaje;
+    
+    // Constructores
+    public Mensajes(String datosMensaje, String mensaje){
+        this.datosMensaje = datosMensaje;
+        this.mensaje = mensaje;
     }
 
     public Mensajes() {}
 
-    public void setContenidoMensaje(String contenidoMensaje) {
-        this.contenidoMensaje = contenidoMensaje;
+    // Setters y getters
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
     }
 
-    public String getContenidoMensaje() {
-        return contenidoMensaje;
+    public String getMensaje() {
+        return mensaje;
     }
 
-    public void setHora(int hora) {
-        this.hora = hora;
+    public void setDatosMensaje(String datosMensaje) {
+        this.datosMensaje = datosMensaje;
     }
 
-    public int getHora() {
-        return hora;
+    public String getDatosMensaje() {
+        return datosMensaje;
     }
 
-    public void setUserUsuario(String userUsuario) {
-        this.userUsuario = userUsuario;
+    // Métodos
+    public void recibeDatosDeMnesaje(String datosMensaje){
+
     }
 
-    public String getUserUsuario() {
-        return userUsuario;
+    public void recibeMensajeEditado(){
+
     }
 
-    // Funcion 
-    public void recibeObjeto() {
-        
-    }
+    public void recibeMensajeEliminado(){
 
+    }
 }

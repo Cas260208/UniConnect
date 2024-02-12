@@ -2,75 +2,92 @@ package Modelo.Modulo_Mensajería;
 
 
 public class GestorMensajeria {
-    private Mensajes mensaje;
-    private TablaMensajes tablaMensajes;
+    // Atributos
+    private Mensajeria chat;
+    private Mensajes mensajes;
+    private boolean editMensaje;
+    private boolean eliminarMensaje;
 
-    public GestorMensajeria(Mensajes mensaje, TablaMensajes tablaMensajes) {
-        this.mensaje = mensaje;
-        this.tablaMensajes = tablaMensajes;
+    // Constructores 
+    public GestorMensajeria(Mensajeria chat, Mensajes mensajes, boolean editMensaje, boolean eliminarMensaje) {
+        this.chat = chat; 
+        this.mensajes = mensajes;
+        this.editMensaje = editMensaje;
+        this. eliminarMensaje = eliminarMensaje;
     }
 
     public GestorMensajeria() {}
 
-    public void setMensaje(Mensajes mensaje) {
-        this.mensaje = mensaje;
+    // setters y getters
+    public void setChat(Mensajeria chat) {
+        this.chat = chat;
     }
 
-    public Mensajes getMensaje() {
-        return mensaje;
+    public Mensajeria getChat() {
+        return chat;
     }
 
-    public void setTablaMensajes(TablaMensajes tablaMensajes) {
-        this.tablaMensajes = tablaMensajes;
+    public void setMensaje(Mensajes mensajes) {
+        this.mensajes = mensajes;
+    }
+    public Mensajes getMensajes() {
+        return mensajes;
     }
 
-    public TablaMensajes getTablaMensajes() {
-        return tablaMensajes;
+    public void setEditMensaje(boolean editMensaje) {
+        this.editMensaje = editMensaje;
     }
 
-    // Actualiza un mensaje existente
-    public void actualizaMensaje(int index, Mensajes nuevoMensaje) {
-        tablaMensajes.actualizaMensaje(index, nuevoMensaje);
+    public boolean getEditMensaje() {
+        return editMensaje;
     }
 
-    // Elimina un mensaje o un chat
-    public void mensajeEliminar(int index, boolean esChat) {
-        tablaMensajes.eliminaMensajeOChat(index, esChat);
+    public void setEliminarMensaje(boolean eliminarMensaje) {
+        this.eliminarMensaje = eliminarMensaje;
     }
 
-    // Recibe un chat seleccionado
-    public Mensajeria recibeChatSeleccionado(int index) {
-        return (Mensajeria) tablaMensajes.buscaMensajeOChat(index, true);
+    public boolean getEliminarMensaje() {
+        return eliminarMensaje;
     }
 
-    // Recibe un mensaje para enviar
-    public void recibeMensajeAEnviar(Mensajes mensaje) {
-        tablaMensajes.almacenaMensaje(mensaje);
+    // Métodos
+    public void recibeSeleccionChat() {
+        
     }
 
-    // Recibe un nuevo mensaje
-    public void recibeNuevoMensaje(Mensajes mensaje) {
-        tablaMensajes.almacenaMensaje(mensaje);
+    public void recibeChatConMensajes() {
+        
     }
 
-    // Prepara un mensaje editado
-    public void preparaMensajeEditado(int index, Mensajes mensajeEditado) {
-        tablaMensajes.actualizaMensaje(index, mensajeEditado);
+    public void recibeMensajeAEnviar() {
+        
     }
 
-    // Recibe un mensaje seleccionado
-    public Mensajes recibeMensajeSeleccionado(int index) {
-        return (Mensajes) tablaMensajes.buscaMensajeOChat(index, false);
+    public void recibeInstanciaDatosMensaje() {
+        
     }
 
-    // Escribe un mensaje
-    public void escribeMensaje(Mensajes mensaje) {
-        tablaMensajes.almacenaMensaje(mensaje);
+    public void recibeMensajeAlmacenado() {
+        
     }
 
-    // Elimina un chat seleccionado
-    public void deleteChatSeleccionado(int index) {
-        tablaMensajes.eliminaMensajeOChat(index, true);
+    public void preparaMensaje() {
+        
     }
 
+    public void recibeEdicionDeMensaje() {
+        
+    }
+
+    public void recibeMensajeEditado() {
+        
+    }
+
+    public void preparaMensajeEditado() {
+        
+    }
+
+    public void confirmaSelDeEliminarChat() {
+        
+    }
 }
