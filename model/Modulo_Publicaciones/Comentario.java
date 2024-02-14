@@ -1,29 +1,29 @@
 package model.Modulo_Publicaciones;
 
-public class Publicacion {
-    private String datosPublicacion;
+public class Comentario {
+    private String datosComentario;
     private String fecha;
     private String hora;
     private String autor;
 
     // Constructor vacío
-    public Publicacion() {}
+    public Comentario() {}
 
     // Constructor
-    public Publicacion(String datosPublicacion, String fecha, String hora, String autor) {
-        this.datosPublicacion = datosPublicacion;
+    public Comentario(String datosComentario, String fecha, String hora, String autor) {
+        this.datosComentario = datosComentario;
         this.fecha = fecha;
         this.hora = hora;
         this.autor = autor;
     }
 
     // Getters and Setters
-    public String getDatosPublicacion() {
-        return datosPublicacion;
+    public String getDatosComentario() {
+        return datosComentario;
     }
 
-    public void setDatosPublicacion(String datosPublicacion) {
-        this.datosPublicacion = datosPublicacion;
+    public void setDatosComentario(String datosComentario) {
+        this.datosComentario = datosComentario;
     }
 
     public String getFecha() {
@@ -50,8 +50,8 @@ public class Publicacion {
         this.autor = autor;
     }
 
-    // Metodos
-    public void recibeDatosPublicacion() {
+    // Metodos 
+    public void recibeDatosComentario() {
         // Implementación
     }
 
