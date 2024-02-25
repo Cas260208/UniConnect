@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-import model.Modulo_Autenticacion.Autenticacion;
 
 import java.awt.*;
 
@@ -22,12 +21,15 @@ public class IU_InicioDeSesion {
         // imagen 
         ImageIcon imageIcon = new ImageIcon("view\\image\\Logo-Vorada.png");
         Image image = imageIcon.getImage();
-        Image scaledImage = image.getScaledInstance(200, 200,  java.awt.Image.SCALE_SMOOTH);
+        Image scaledImage = image.getScaledInstance(222, 204,  java.awt.Image.SCALE_SMOOTH);
         imageIcon = new ImageIcon(scaledImage);
 
-        // Crea un JLabel con la imagen y añádelo al panel
         JLabel imageLabel = new JLabel(imageIcon);
-        panel.add(imageLabel);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 50; 
+        gbc.gridy = 56; 
+        gbc.gridheight = GridBagConstraints.REMAINDER; 
+        panel.add(imageLabel, gbc);
         frame.setVisible(true);
     }
 
@@ -38,33 +40,33 @@ public class IU_InicioDeSesion {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         JLabel userLabel = new JLabel("Correo electrónico o número telefónico");
-        userLabel.setForeground(Color.decode("#000000")); // Color de texto pastel
+        userLabel.setForeground(Color.decode("#000000")); 
         panel.add(userLabel, gbc);
 
         JTextField userText = new JTextField(20);
         panel.add(userText, gbc);
 
         JLabel passwordLabel = new JLabel("Contraseña");
-        passwordLabel.setForeground(Color.decode("#000000")); // Color de texto pastel
+        passwordLabel.setForeground(Color.decode("#000000")); 
         panel.add(passwordLabel, gbc);
 
         JPasswordField passwordText = new JPasswordField(20);
         panel.add(passwordText, gbc);
 
         JCheckBox rememberMe = new JCheckBox("Recuérdame");
-        rememberMe.setForeground(Color.decode("#5271FF")); // Color de texto pastel
+        rememberMe.setForeground(Color.decode("#5271FF")); 
         panel.add(rememberMe, gbc);
 
         JButton loginButton = new JButton("Iniciar sesión");
-        loginButton.setBackground(Color.decode("#CA76CD")); // Color de botón pastel
+        loginButton.setBackground(Color.decode("#CA76CD")); 
         panel.add(loginButton, gbc);
 
         JLabel registerPrompt = new JLabel("¿Aún no tienes cuenta?");
-        registerPrompt.setForeground(Color.decode("#000000")); // Color de texto pastel
+        registerPrompt.setForeground(Color.decode("#000000"));
         panel.add(registerPrompt, gbc);
 
         JButton registerButton = new JButton("REGÍSTRATE");
-        registerButton.setBackground(Color.decode("#91CDC2")); // Color de botón pastel
+        registerButton.setBackground(Color.decode("#91CDC2")); 
         panel.add(registerButton, gbc);
     }
 }
