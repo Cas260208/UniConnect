@@ -39,20 +39,36 @@ public class TablaMensajes {
         this.conversaciones = conversaciones;
     }
     
-    public void buscaMensajeChat() {
-        // Código para buscar un mensaje de chat
+    public Mensajes buscaMensajeChat(String contenido) {
+        for (Mensajes mensaje : mensajesChat) {
+            if (mensaje.getDatosMensaje().contains(contenido)) {
+                return mensaje;
+            }
+        }
+        return null;
     }
 
-    public void actualizaMensajeChat() {
-        // Código para actualizar un mensaje de chat
-    }
+    // Método para actualizar un mensaje de chat
+    public void actualizaMensajeChat(Mensajes mensaje, String nuevoContenido) {
+        if (mensajesChat.contains(mensaje)) {
+            mensaje.setDatosMensaje(nuevoContenido);
+            System.out.println("Mensaje de chat actualizado correctamente.");
+        } else {
+            System.out.println("El mensaje de chat no existe en la lista.");
+        }
 
-    public void eliminaMensajeChat() {
-        // Código para eliminar un mensaje de chat
-    }
+    // Método para eliminar un mensaje de chat
+    public void eliminaMensajeChat(Mensajes mensaje) {
+        if (mensajesChat.remove(mensaje)) {
+            System.out.println("Mensaje de chat eliminado correctamente.");
+        } else {
+            System.out.println("El mensaje de chat no existe en la lista.");
+        }
 
-    public void agregaMensajeChat() {
-        // Código para agregar un mensaje de chat
+    // Método para agregar un mensaje de chat
+    public void agregaMensajeChat(Mensajes mensaje) {
+        mensajesChat.add(mensaje);
+        System.out.println("Mensaje de chat agregado correctamente.");
     }
 
     
