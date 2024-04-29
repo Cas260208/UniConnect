@@ -1,65 +1,80 @@
 package model.Modulo_Publicaciones;
 
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
-public class Reaccion {
-    private String datosReaccion;
+public class Publicacion {
+    private String datosPublicacion;
+    private LocalDateTime fechaHora;
+    private String autor;
 
     // Constructor vacío
-    public Reaccion() {}
+    public Publicacion() {}
 
     // Constructor
-    public Reaccion(String datosReaccion) {
-        this.datosReaccion = datosReaccion;
+    public Publicacion(String datosPublicacion, LocalDateTime fechaHora, String autor) {
+        this.datosPublicacion = datosPublicacion;
+        this.fechaHora = fechaHora;
+        this.autor = autor;
     }
 
-    // Getter and Setter
-    public String getDatosReaccion() {
-        return datosReaccion;
+    // Getters and Setters
+    public String getDatosPublicacion() {
+        return datosPublicacion;
     }
 
-    public void setDatosReaccion(String datosReaccion) {
-        this.datosReaccion = datosReaccion;
+    public void setDatosPublicacion(String datosPublicacion) {
+        this.datosPublicacion = datosPublicacion;
     }
 
-    // Método para recibir datos de la reacción desde el usuario
-    public void recibeDatosReaccion() {
+    public LocalDateTime getFechaHora() {
+        return fechaHora;
+    }
+
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    // Métodos
+    public void recibeDatosPublicacion() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Seleccione una reacción:");
-        System.out.println("1. Like");
-        System.out.println("2. Me divierte");
-        System.out.println("3. Me encorazona");
-        System.out.println("4. Me enoja");
-        System.out.println("5. Me importa");
+        System.out.println("Escriba un comentario: ");
+        String datos = scanner.nextLine();
 
-        int opcion = scanner.nextInt();
+      
+        LocalDateTime fechaHoraActual = LocalDateTime.now();
 
-        switch (opcion) {
-            case 1:
-                datosReaccion = "Like";
-                break;
-            case 2:
-                datosReaccion = "Me divierte";
-                break;
-            case 3:
-                datosReaccion = "Me encorazona";
-                break;
-            case 4:
-                datosReaccion = "Me enoja";
-                break;
-            case 5:
-                datosReaccion = "Me importa";
-                break;
-            default:
-                System.out.println("Opción inválida.");
-                break;
-        }
-    }
+       
+        String autor = "Usuario"; 
 
- 
-    public void solicitaGuardado() {
      
-        System.out.println("Reacción guardada: " + datosReaccion);
+        setDatosPublicacion(datos);
+        setFechaHora(fechaHoraActual);
+        setAutor(autor);
+
+        System.out.println("Publicación recibida correctamente.");
     }
+
+    public void solicitaGuardado() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("¿Desea guardar la publicación? (s/n)");
+        String respuesta = scanner.nextLine();
+
+        if (respuesta.equalsIgnoreCase("s")) {
+            // Aquí iría la lógica para guardar la publicación
+            System.out.println("Publicación guardada exitosamente.");
+        } else {
+            System.out.println("Publicación no guardada.");
+        }
+    } 
 }
