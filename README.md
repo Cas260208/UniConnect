@@ -1,2 +1,2 @@
-# Red-Social-Vorada-
-Proyecto de Fundamentos de Ingeneria de Software 
+# UNICONTEC-
+Proyecto de Ingeneria de Software I
