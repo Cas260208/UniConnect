@@ -1,71 +1,29 @@
 package model.Modulo_Publicaciones;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TablaPublicaciones {
-    private String publicacion;
-    private String comentario;
-    private String reaccion;
+    private List<Publicacion> listaPublicaciones;
 
     // Constructor vacío
-    public TablaPublicaciones() {}
-
-    // Constructor
-    public TablaPublicaciones(String publicacion, String comentario, String reaccion) {
-        this.publicacion = publicacion;
-        this.comentario = comentario;
-        this.reaccion = reaccion;
+    public TablaPublicaciones() {
+        listaPublicaciones = new ArrayList<>();
     }
 
-    // Getters and Setters
-    public String getPublicacion() {
-        return publicacion;
+    // Método para agregar una nueva publicación a la lista
+    public void agregarPublicacion(Publicacion publicacion) {
+        listaPublicaciones.add(publicacion);
     }
 
-    public void setPublicacion(String publicacion) {
-        this.publicacion = publicacion;
+    // Getters y Setters para la lista de publicaciones (opcional)
+    public List<Publicacion> getListaPublicaciones() {
+    	return listaPublicaciones;
+        return listaPublicaciones;
     }
 
-    public String getComentario() {
-        return comentario;
+    public void setListaPublicaciones(List<Publicacion> listaPublicaciones) {
+        this.listaPublicaciones = listaPublicaciones;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
-    }
-
-    public String getReaccion() {
-        return reaccion;
-    }
-
-    public void setReaccion(String reaccion) {
-        this.reaccion = reaccion;
-    }
-
-    // metodos
-    public void guardaPublicacion() {
-        // Implementación
-    }
-
-    public void actualizaPublicacion() {
-        // Implementación
-    }
-
-    public void guardarComentario() {
-        // Implementación
-    }
-
-    public void regresaMsjCreacion() {
-        // Implementación
-    }
-
-    public void regresaMsjEdicion() {
-        // Implementación
-    }
-
-    public void regresaMsjComentario() {
-        // Implementación
-    }
-
-    public void regresaMsjReaccion() {
-        // Implementación
-    }
+   
 }
