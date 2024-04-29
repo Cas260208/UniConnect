@@ -1,79 +1,45 @@
 package model.Modulo_Publicaciones;
 
+import java.util.Scanner;
+
 public class GestorPublicaciones {
-    private String datosPublicacion;
-    private String datosComentario;
-    private String datosReaccion;
+    private TablaPublicaciones tablaPublicaciones;
+    private TablaComentario tablaComentarios;
+    private TablaReaccion tablaReacciones;
 
-    // Constructor vacío
-    public GestorPublicaciones() {}
-
-    // Constructor
-    public GestorPublicaciones(String datosPublicacion, String datosComentario, String datosReaccion) {
-        this.datosPublicacion = datosPublicacion;
-        this.datosComentario = datosComentario;
-        this.datosReaccion = datosReaccion;
+    public GestorPublicaciones() {
+        tablaPublicaciones = new TablaPublicaciones();
+        tablaComentarios = new TablaComentario();
+        tablaReacciones = new TablaReaccion();
     }
 
-    // Getters and Setters
-    public String getDatosPublicacion() {
-        return datosPublicacion;
+    public void recibirDatosPublicacion(String contenido, String autor) {
+        Publicacion nuevaPublicacion = new Publicacion(contenido, obtenerFechaActual(), obtenerHoraActual(), autor);
+        tablaPublicaciones.agregarPublicacion(nuevaPublicacion);
     }
 
-    public void setDatosPublicacion(String datosPublicacion) {
-        this.datosPublicacion = datosPublicacion;
+    public void recibirDatosComentario(String comentario, String autor, int idPublicacion) {
+        Comentario nuevoComentario = new Comentario(comentario, obtenerFechaActual(), obtenerHoraActual(), autor);
+        tablaComentarios.agregarComentario(nuevoComentario, idPublicacion);
     }
 
-    public String getDatosComentario() {
-        return datosComentario;
+    public void recibirDatosReaccion(String reaccion, String autor, int idPublicacion) {
+        Reaccion nuevaReaccion = new Reaccion(reaccion, obtenerFechaActual(), obtenerHoraActual(), autor);
+        tablaReacciones.agregarReaccion(nuevaReaccion, idPublicacion);
     }
 
-    public void setDatosComentario(String datosComentario) {
-        this.datosComentario = datosComentario;
+    public void compartirPublicacion(String autor, int idPublicacion) {
+        
+        System.out.println(autor + " compartió la publicación " + idPublicacion);
     }
 
-    public String getDatosReaccion() {
-        return datosReaccion;
+    private String obtenerFechaActual() {
+        
+        return "Fecha";
     }
 
-    public void setDatosReaccion(String datosReaccion) {
-        this.datosReaccion = datosReaccion;
-    }
-
-    // Metodos
-    public void recibeDatosPublicacion() {
-        // Implementación
-    }
-
-    public void recibeDatosComentario() {
-        // Implementación
-    }
-
-    public void recibeDatosReaccion() {
-        // Implementación
-    }
-
-    public void informaCreacionPubli() {
-        // Implementación
-    }
-
-    public void informaEdicionPubli() {
-        // Implementación
-    }
-
-    public void informaReaccion() {
-        // Implementación
-    }
-
-    public void muestraPublicacion() {
-        // Implementación
-    }
-
-    public void muestraComentario() {
-        // Implementación
-    }
-
-    public void muestraReaccion() {
-        // Implementación
+    private String obtenerHoraActual() {
+        
+        return "Hora";
     }
 }
