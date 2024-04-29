@@ -1,4 +1,5 @@
 package model.Modulo_Publicaciones;
+import java.util.Scanner;
 
 public class Reaccion {
     private String datosReaccion;
@@ -19,12 +20,45 @@ public class Reaccion {
     public void setDatosReaccion(String datosReaccion) {
         this.datosReaccion = datosReaccion;
     }
-    
+
+    // Método para recibir datos de la reacción desde el usuario
     public void recibeDatosReaccion() {
-        // Implementación
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Seleccione una reacción:");
+        System.out.println("1. Like");
+        System.out.println("2. Me divierte");
+        System.out.println("3. Me encorazona");
+        System.out.println("4. Me enoja");
+        System.out.println("5. Me importa");
+
+        int opcion = scanner.nextInt();
+
+        switch (opcion) {
+            case 1:
+                datosReaccion = "Like";
+                break;
+            case 2:
+                datosReaccion = "Me divierte";
+                break;
+            case 3:
+                datosReaccion = "Me encorazona";
+                break;
+            case 4:
+                datosReaccion = "Me enoja";
+                break;
+            case 5:
+                datosReaccion = "Me importa";
+                break;
+            default:
+                System.out.println("Opción inválida.");
+                break;
+        }
     }
 
+ 
     public void solicitaGuardado() {
-        // Implementación
+     
+        System.out.println("Reacción guardada: " + datosReaccion);
     }
 }
