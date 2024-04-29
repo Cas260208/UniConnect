@@ -1,76 +1,65 @@
 package model.Modulo_Publicaciones;
 
-public class Publicacion {
-    private String datosPublicacion;
-    private String fecha;
-    private String hora;
-    private String autor;
+import java.util.Scanner;
+
+public class Reaccion {
+    private String datosReaccion;
 
     // Constructor vacío
-    public Publicacion() {}
+    public Reaccion() {}
 
     // Constructor
-    public Publicacion(String datosPublicacion, String fecha, String hora, String autor) {
-        this.datosPublicacion = datosPublicacion;
-        this.fecha = fecha;
-        this.hora = hora;
-        this.autor = autor;
+    public Reaccion(String datosReaccion) {
+        this.datosReaccion = datosReaccion;
     }
 
-    // Getters and Setters
-    public String getDatosPublicacion() {
-        return datosPublicacion;
+    // Getter and Setter
+    public String getDatosReaccion() {
+        return datosReaccion;
     }
 
-    public void setDatosPublicacion(String datosPublicacion) {
-        this.datosPublicacion = datosPublicacion;
+    public void setDatosReaccion(String datosReaccion) {
+        this.datosReaccion = datosReaccion;
     }
 
-    public String getFecha() {
-        return fecha;
+    // Método para recibir datos de la reacción desde el usuario
+    public void recibeDatosReaccion() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Seleccione una reacción:");
+        System.out.println("1. Like");
+        System.out.println("2. Me divierte");
+        System.out.println("3. Me encorazona");
+        System.out.println("4. Me enoja");
+        System.out.println("5. Me importa");
+
+        int opcion = scanner.nextInt();
+
+        switch (opcion) {
+            case 1:
+                datosReaccion = "Like";
+                break;
+            case 2:
+                datosReaccion = "Me divierte";
+                break;
+            case 3:
+                datosReaccion = "Me encorazona";
+                break;
+            case 4:
+                datosReaccion = "Me enoja";
+                break;
+            case 5:
+                datosReaccion = "Me importa";
+                break;
+            default:
+                System.out.println("Opción inválida.");
+                break;
+        }
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
-    public String getAutor() {
-        return autor;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-
-    // Metodos
-    public void recibeDatosPublicacion() {
-        // Implementación
-    }
-
-    public String obtieneFecha() {
-        // Implementación
-        return null;
-    }
-
-    public String obtieneHora() {
-        // Implementación
-        return null;
-    }
-
-    public String obtieneAutor() {
-        // Implementación
-        return null;
-    }
-
+ 
     public void solicitaGuardado() {
-        // Implementación
+     
+        System.out.println("Reacción guardada: " + datosReaccion);
     }
 }
