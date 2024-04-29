@@ -52,20 +52,44 @@ public class GestorMensajeria {
         this.eliminarMensaje = eliminarMensaje;
     }
 
-    // Metodos
-    public void recibeSolicitud() {
-       
+    // Método para recibir una solicitud
+    public void recibirSolicitud(String solicitud) {
+        System.out.println("Solicitud recibida: " + solicitud);
+        // Lógica adicional para procesar la solicitud
     }
 
-    public void recibeMensaje() {
-    
+    // Método para recibir un mensaje
+    public void recibirMensaje(String mensaje) {
+        System.out.println("Mensaje recibido: " + mensaje);
+        // Lógica adicional para procesar el mensaje recibido
     }
 
-    public void preparaMensaje() {
-
+    // Método para preparar un mensaje
+    public void prepararMensaje(String contenido) {
+        System.out.println("Preparando mensaje...");
+        mensajes.crearMensaje(contenido);
+        System.out.println("Mensaje preparado: " + mensajes.getDatosMensaje());
+        // Lógica adicional para preparar el mensaje
     }
 
-    public void recibeConfirmacion() {
+    // Método para editar un mensaje ya enviado
+    public void editarMensajeEnviado(Mensajes mensaje, String nuevoContenido) {
+        if (chat.getChat().getMensajesEnviados().contains(mensaje)) {
+            mensaje.setDatosMensaje(nuevoContenido);
+            System.out.println("Mensaje editado correctamente.");
+        } else {
+            System.out.println("No se puede editar el mensaje. El mensaje no existe en la lista de enviados.");
+        }
 
+        // Método para eliminar un mensaje enviado
+    public void eliminarMensajeEnviado(Mensajes mensaje) {
+        if (chat.getChat().getMensajesEnviados().contains(mensaje)) {
+            chat.getChat().getMensajesEnviados().remove(mensaje);
+            System.out.println("Mensaje eliminado correctamente.");
+        } else {
+            System.out.println("No se puede eliminar el mensaje. El mensaje no existe en la lista de enviados.");
+        }
     }
+
+
 }
