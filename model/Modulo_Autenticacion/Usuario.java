@@ -1,6 +1,6 @@
 package model.Modulo_Autenticacion;
 
-public class Usuario {
+public class RegistroUsuario {
     private String nombre;
     private String apellidos;
     private String correo;
