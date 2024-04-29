@@ -1,19 +1,20 @@
 package model.Modulo_Publicaciones;
 
+import java.time.LocalDateTime;
+import java.util.Scanner;
+
 public class Comentario {
     private String datosComentario;
-    private String fecha;
-    private String hora;
+    private LocalDateTime fechaHora;
     private String autor;
 
     // Constructor vacío
     public Comentario() {}
 
     // Constructor
-    public Comentario(String datosComentario, String fecha, String hora, String autor) {
+    public Comentario(String datosComentario, LocalDateTime fechaHora, String autor) {
         this.datosComentario = datosComentario;
-        this.fecha = fecha;
-        this.hora = hora;
+        this.fechaHora = fechaHora;
         this.autor = autor;
     }
 
@@ -26,20 +27,12 @@ public class Comentario {
         this.datosComentario = datosComentario;
     }
 
-    public String getFecha() {
-        return fecha;
+    public LocalDateTime getFechaHora() {
+        return fechaHora;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
     }
 
     public String getAutor() {
@@ -50,27 +43,40 @@ public class Comentario {
         this.autor = autor;
     }
 
-    // Metodos 
+  
     public void recibeDatosComentario() {
-        // Implementación
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese el comentario:");
+        String comentario = scanner.nextLine();
+
+        
+        LocalDateTime fechaHoraActual = LocalDateTime.now();
+
+        
+        String autor = "Usuario"; 
+
+      
+        setDatosComentario(comentario);
+        setFechaHora(fechaHoraActual);
+        setAutor(autor);
+
+        System.out.println("Comentario recibido correctamente.");
     }
 
-    public String obtieneFecha() {
-        // Implementación
-        return null;
-    }
+    
+    public void solicitaGuardado(TablaComentario tablaComentario) {
+        Scanner scanner = new Scanner(System.in);
 
-    public String obtieneHora() {
-        // Implementación
-        return null;
-    }
+        System.out.println("¿Desea guardar el comentario? (s/n)");
+        String respuesta = scanner.nextLine();
 
-    public String obtieneAutor() {
-        // Implementación
-        return null;
-    }
-
-    public void solicitaGuardado() {
-        // Implementación
+        if (respuesta.equalsIgnoreCase("s")) {
+           
+            tablaComentario.agregarComentario(new Comentario(datosComentario, fechaHora, autor));
+            System.out.println("Comentario guardado exitosamente.");
+        } else {
+            System.out.println("Comentario no guardado.");
+        }
     }
 }
