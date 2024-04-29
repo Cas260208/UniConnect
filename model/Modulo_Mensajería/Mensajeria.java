@@ -53,11 +53,15 @@ public class Mensajeria {
         this.chatActivo = chatActivo;
     }
 
-    public void buscaChatSeleccionado() {
-        // Código para buscar un chat seleccionado
+    public void buscarChatSeleccionado(String chat) {
+        // Lógica para buscar un chat seleccionado
+        System.out.println("Buscando chat seleccionado: " + chat);
     }
 
-    public void recibeChatDeNuevoMensaje() {
-        // Código para recibir un nuevo mensaje de chat
+    // Método para recibir un nuevo mensaje de chat
+    public void recibirChatDeNuevoMensaje() {
+        // Lógica para recibir un nuevo mensaje de chat
+        System.out.println("Recibiendo nuevo mensaje de chat...");
     }
+
 }
